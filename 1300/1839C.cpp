@@ -1,3 +1,4 @@
+
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
@@ -185,10 +186,24 @@ int main(){
 int t,n,k;ll ans;
 cin>>t;
 while(t--){ans=0;
-	cin>>n>>k;
-	cout<<(n-1)/k+((n-1)%k!=0)+1<<endl;
+cin>>n;int a[n];fill(a,n);
+vector<int> v;int c=0;
+for(int i=0;i<n;i++){
+	if(!a[i]){k=v.size();v.push_back(i-k);
+	while(c-->0)v.push_back(0);c=0;
+
+	}
+	else c++;
+}
+if(v.size()==n){cout<<"yes"<<endl;for(int i=0;i<v.size();i++)cout<<v[v.size()-i-1]<<" ";
+
+}
+else cout<<"no";
+cout<<endl;
+
 }
 }
 
 
- 
+
+
